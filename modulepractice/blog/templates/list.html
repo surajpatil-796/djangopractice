@@ -1,0 +1,13 @@
+{% extends "layout/parent.html" %}
+{% block menublock %}
+{%  for obj in object_list %}
+<!-- <div class="row"> -->
+  <li><a href='/blog/{{ obj.id }}'>{{ obj.title }} </li>
+    {% include 'blog/list_in_line.html' with blog_post=obj truncate=True %}
+ 
+ 
+    
+
+<!-- </div> -->
+{% endfor %}
+ {% endblock %} 

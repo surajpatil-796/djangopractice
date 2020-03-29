@@ -1,0 +1,15 @@
+{% extends "layout/parent.html" %}
+
+{% block mainblock %}
+<h1>{{ object.title }} </h1>
+<p> {{ object.content }} </p>
+{% include 'blog/list_in_line.html' with blog_post=obj %}
+ {% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+
+<a href ='{{ blog_post.get_edit_url }}'> EDIT</a>
+<a href ='{{ blog_post.get_delete_url }}'> DELETE</a>
+{% endif %}
+    {% endif %}
+
+{% endblock %}

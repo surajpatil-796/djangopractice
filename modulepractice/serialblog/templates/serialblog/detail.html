@@ -1,0 +1,21 @@
+{% extends "layout/parent.html" %}
+{% block menublock %}
+{% load static %}
+{% if object_list %}
+    <div class="card-body">
+        <h4 class="card-title">{{object_list.image}}</h4>
+        <h5 class="card-title"> {{object_list.user}}</h5>
+        <h5 class="card-title">₹ {{object_list.name}}</h5>
+        <h5 class="card-title">₹ {{object_list.description}}</h5>
+<!--         
+        <a href ='{{ object_list.get_update_url }}'> EDIT</a>
+        <a href ='{{ object_list.get_delete_url }}'> DELETE<a> -->
+    {% if object.image %}
+        <img src="{{object_list.image.url}}" class="image-fluid" alt="{{object_list.name}}">
+    {% endif %}
+    <p class="card-text">{{object_list.dateCreated|timesince}}<br/>{{object_list.description|truncatewords:15}}</p>
+    
+{% endif %}
+    
+    </div>
+{% endblock %}

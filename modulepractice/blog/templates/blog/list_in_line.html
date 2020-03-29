@@ -1,0 +1,18 @@
+<!-- <li><a href='{{ blog_post.get_abs_url }}'> {{ blog_post.title }} </li> -->
+<div class='col-12 col-md-6 mb-3 mx-auto'>
+    <div class='card'>
+        <div class="card-body">
+            <h5 class='card-title'>{{ blog_post.title }}</h5>
+<!--             
+<h1>{{ blog_post.title }} </h1>
+<p> {{ blog_post.content }} </p> -->
+
+            {% if truncate %}
+                <p class='card-text'>{{ blog_post.content|linebreaks|truncatewords:30 }}</p>
+            {% else %}
+            {{ blog_post.content|linebreaks }}
+            {% endif %}
+            <!-- <a href="{{ blog_post.get_absolute_url }}">View</a> -->
+        </div>
+    </div>
+</div>
