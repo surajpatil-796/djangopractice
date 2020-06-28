@@ -1,0 +1,15 @@
+{% extends "layout/parent.html" %}
+{% block mainblock %}
+  <div class="text-center">
+    <div class="col-6">
+      <form method="POST" action = ".">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {{ title }}
+         <button type="submit" class="btn btn-success">Update</a>
+          
+          
+      </form>
+    </div>
+  </div>
+{% endblock %}   

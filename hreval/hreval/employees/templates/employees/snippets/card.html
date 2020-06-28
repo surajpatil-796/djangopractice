@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+    {% if object_list %}
+        <!-- {% if object.image %}
+            <img src="{{object.image.url}}" class="card-img-top" alt="{{object.title}}">
+        {% endif %} -->
+        {{ obj.name }}
+    <div class="card-body">
+        
+      <h5 class="card-title">{{object_list.name}}</h5>
+      <p class="card-text">{{object_list.createdDate|timesince}}<br/>{{object_list.department|truncatewords:15}}</p>
+      <a href="{{object.get_abs_url}}" class="btn btn-success">View</a>
+    </div>
+    {% endif %}
+
+  </div>
